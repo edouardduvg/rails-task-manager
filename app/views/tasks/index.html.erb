@@ -1,0 +1,15 @@
+<h1>LIST TASKS</h1>
+<ul>
+  <% @tasks.each do |task| %>
+    <li>
+      <% if task.completed %>
+        <i class="fa fa-check-square-o" aria-hidden="true"></i>
+      <% else %>
+        <i class="fa fa-square-o" aria-hidden="true"></i>
+      <% end %>
+      <%= link_to task.title, task_path(task)%> <i class="fa fa-trash-o" aria-hidden="true"> </i>
+    </li>
+  <% end %>
+</ul>
+
+<%= link_to 'create a task', new_task_path %>
